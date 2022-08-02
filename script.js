@@ -12,24 +12,43 @@ King = 10
 
 
 let firstCard = 13
-let secondCard = 9
+let secondCard = 2
+let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard
 let hasBlackJack = false
 let isAlive = true
 let message = ""
-if (sum <= 20) {
-    message = "Do you want to draw a new card?"
-} else if (sum === 21) {
-    message = "Don't EVER gamble again!"
-    hasBlackJack = true
-} else {
-    message = "You'd already lost when you clicked play!"
-    isAlive = false
+let messageEl = document.getElementById("message-el")
+let sumEl = document.getElementById("sum-el")
+let cardsEl = document.querySelector("#cards-el")
+
+function startGame() {
+    renderGame()
 }
 
-console.log(message)
+function renderGame() {
+    sumEl.textContent = "Sum: " + sum
+    cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "Don't EVER gamble again!"
+        hasBlackJack = true
+    } else {
+        message = "You'd already lost when you clicked play!"
+        isAlive = false
+    }
+    messageEl.textContent = message
+}
 
-
+function newCard() {
+    console.log("Drawing a new card from the deck")
+    let card = 7
+    sum += card
+    cardsEl.textContent += "" + card
+    renderGame()
+    
+}
 
 
 
@@ -51,3 +70,8 @@ console.log(message)
 // console.log(11 <= 11) true
 // console.log(3 <= 2) false
 
+let featuredPosts = [
+    "Check out my Netflix clone", 
+    "Here's the code for my project", 
+    "I've relaunched my portfolio"
+]
