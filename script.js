@@ -11,8 +11,8 @@ King = 10
 */
 
 
-let firstCard = 13
-let secondCard = 2
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
 let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard
 let hasBlackJack = false
@@ -22,13 +22,22 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.querySelector("#cards-el")
 
+function getRandomCard() {
+    return 5
+}
+
+
 function startGame() {
     renderGame()
 }
 
 function renderGame() {
     sumEl.textContent = "Sum: " + sum
-    cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
+    cardsEl.textContent = "Cards: "
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " "
+    }
+    
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
     } else if (sum === 21) {
@@ -42,16 +51,17 @@ function renderGame() {
 }
 
 function newCard() {
-    console.log("Drawing a new card from the deck")
-    let card = 7
+    let card = getRandomCard()
     sum += card
+    cards.push(card)
+    
     cardsEl.textContent += "" + card
     renderGame()
     
 }
 
 
-
+/////////////////// if Statements ///////////////////
 // let age = 100
 
 // if (age < 100) {
@@ -62,6 +72,7 @@ function newCard() {
 //     console.log("You already have one!")
 // }
 
+/////////////////// Comparison Statements ///////////////////
 // console.log(4 === 3) false
 // console.log(5 > 2) true
 // console.log(12 > 12) false
@@ -70,6 +81,7 @@ function newCard() {
 // console.log(11 <= 11) true
 // console.log(3 <= 2) false
 
+/////////////////// Arrays ///////////////////
 // let bilal = [
 //     "Too tall apparently", 
 //     24, 
@@ -80,16 +92,39 @@ function newCard() {
 // console.log(featuredPosts[1])
 // console.log(featuredPosts[2])
 
-let messages = [
-    "Hey, how are you",
-    "I'm great thanks",
-    "All good. Been working on my portfolio lately"
-]
-console.log(messages) // Getting used to this
-let newMessage = "Same here!"
+// let messages = [
+//     "Hey, how are you",
+//     "I'm great thanks",
+//     "All good. Been working on my portfolio lately"
+// ]
 
-messages.push(newMessage)
-console.log(messages)
+// console.log(messages) // Getting used to this
+// let newMessage = "Same here!"
 
-messages.pop()
-console.log(messages)
+// messages.push(newMessage)
+// console.log(messages)
+
+// messages.pop()
+// console.log(messages)
+
+/////////////////// for Loops ///////////////////
+// for ( let i = 0; i <= cards.length; i++) {
+//     console.log(cards[i])
+// }
+
+// let sentence = ["Hello", "my", "name", "is", "Bilal"]
+// let greetingEl = document.getElementById("greeting-el")
+
+// for (let i = 0; i < sentence.length; i++) {
+//     greetingEl.textContent += sentence[i] + " "
+// }
+
+/////////////////// return Keyword ///////////////////
+// let player1Time = 105
+// let player2Time = 50
+
+// function getTotalRaceTime() {
+//     return player1Time + player2Time
+// }
+// let totalTime = getTotalRaceTime()
+// console.log(totalTime)  
