@@ -70,8 +70,26 @@ function newCard() {
 // console.log(11 <= 11) true
 // console.log(3 <= 2) false
 
-let featuredPosts = [
-    "Check out my Netflix clone", 
-    "Here's the code for my project", 
-    "I've relaunched my portfolio"
+// let bilal = [
+//     "Too tall apparently", 
+//     24, 
+//     "likePizza = true"
+// ]
+
+// console.log(featuredPosts[0])
+// console.log(featuredPosts[1])
+// console.log(featuredPosts[2])
+
+let messages = [
+    "Hey, how are you",
+    "I'm great thanks",
+    "All good. Been working on my portfolio lately"
 ]
+console.log(messages) // Getting used to this
+let newMessage = "Same here!"
+
+messages.push(newMessage)
+console.log(messages)
+
+messages.pop()
+console.log(messages)
