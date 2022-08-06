@@ -6,28 +6,44 @@ Aim of the game is to get as close to 21 as possible
 Anything above = LOSS
 Anything under = Still in the game
 
-Ace = 11
+Ace = 11 (and also 1)
 King = 10
+Queen = 10
+Jack = 10
 */
 
 
-let firstCard = getRandomCard()
-let secondCard = getRandomCard()
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard
+
+let cards = []
+let sum = 0 
 let hasBlackJack = false
-let isAlive = true
+let isAlive = false
 let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.querySelector("#cards-el")
 
 function getRandomCard() {
-    return 5
+    let randomNumber =  Math.ceil(Math.random()*13) 
+    console.log(randomNumber)
+
+    if (randomNumber === 1) { // I had assigned it instead asfhasuogasuof
+        return 11
+    } else if (randomNumber > 10) {
+        return 10
+    } else {
+        return randomNumber
+    }
+    
 }
 
 
 function startGame() {
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    sum = firstCard + secondCard
+    cards = [firstCard, secondCard]
+    isAlive = true
     renderGame()
 }
 
@@ -59,7 +75,12 @@ function newCard() {
     renderGame()
     
 }
+///////////////////               ///////////////////
+/////////////////// Project Notes ///////////////////
+// The ace card takes dual values, 1 and 11. How can i implement this?
 
+///////////////////               ///////////////////
+///////////////////               ///////////////////
 
 /////////////////// if Statements ///////////////////
 // let age = 100
@@ -122,9 +143,55 @@ function newCard() {
 /////////////////// return Keyword ///////////////////
 // let player1Time = 105
 // let player2Time = 50
-
 // function getTotalRaceTime() {
 //     return player1Time + player2Time
 // }
 // let totalTime = getTotalRaceTime()
 // console.log(totalTime)  
+
+/////////////////// Math.random (dice) ///////////////////
+// let randomNumber = Math.random()
+
+// console.log(randomNumber)
+    
+// Your answer: It generates a random number between 0-1 exclusive.
+
+// let flooredNumber = Math.floor(-3.45632)
+
+// console.log(flooredNumber)
+
+// Your answer: It rounds the value down to the nearest integer.
+
+// let randomNumber = Math.floor(Math.random() * 6)
+
+// console.log(randomNumber)
+
+// Your answer: Values will be between 0-5, not 1-6.
+
+// let randomNumber = Math.ceil(Math.random() * 6)
+
+// console.log(randomNumber)
+
+// Your answer: I could've added 1 to the end of the function too.
+
+// function rollDice() {
+//     let randomNumber = Math.ceil(Math.random() * 6)
+//     return randomNumber
+// }
+
+// console.log (rollDice())
+/////////////////// Boolean Operators ///////////////////
+// let hasCompletedCourse = true
+// let givesCertificate = true
+
+// if (hasCompletedCourse && givesCertificate) {
+//     generateCertificate()
+// }
+// function generateCertificate() {
+//     console.log("Generating certificate....")
+// }
+
+
+
+/////////////////// return Keyword ///////////////////
+/////////////////// return Keyword ///////////////////
