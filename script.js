@@ -13,7 +13,10 @@ Jack = 10
 */
 
 
-
+let player = {
+    name:"Bilal",
+    chips: 178
+}
 let cards = []
 let sum = 0 
 let hasBlackJack = false
@@ -22,6 +25,8 @@ let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.querySelector("#cards-el")
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = player.name + ": $" + player.chips
 
 function getRandomCard() {
     let randomNumber =  Math.ceil(Math.random()*13) 
@@ -67,13 +72,14 @@ function renderGame() {
 }
 
 function newCard() {
-    let card = getRandomCard()
-    sum += card
-    cards.push(card)
-    
-    cardsEl.textContent += "" + card
-    renderGame()
-    
+    if (isAlive === true && hasBlackJack === false) {
+        let card = getRandomCard()
+        sum += card
+        cards.push(card)
+        cardsEl.textContent += "" + card
+        renderGame()
+    }
+   
 }
 ///////////////////               ///////////////////
 /////////////////// Project Notes ///////////////////
@@ -180,6 +186,7 @@ function newCard() {
 // }
 
 // console.log (rollDice())
+
 /////////////////// Boolean Operators ///////////////////
 // let hasCompletedCourse = true
 // let givesCertificate = true
@@ -191,7 +198,54 @@ function newCard() {
 //     console.log("Generating certificate....")
 // }
 
+// let hasSolvedChallenge = false
+// let hasHintLeft = false
 
+// function showSolution() {
+//     if (hasSolvedChallenge === false && hasHintLeft === false)
+//     console.log("Showing the solution...")
+// }
+// showSolution()
+
+// let likesDocumentaries = true
+// let likesStartups = false
+
+// if (likesDocumentaries === true || likesStartups === true) {
+//     recommendMovie()
+// }
+
+// function recommendMovie() {
+//     console.log("Hey, check out this new film we think you will like!")
+// }
+
+/////////////////// Objects ///////////////////
+// let course = {
+//     title: "learn CSS Grid for free",
+//     lessons: 16,
+//     creator: "Per Harald Borgen",
+//     length: 63,
+//     level: 2,
+//     isFree: true,
+//     tags: ["html", "css"]
+// }
+
+// console.log(course.tags[1])
+
+// let castle = {
+//     name: "GIGACHAD",
+//     price: 190,
+//     descriptionKey: ["Ancient", "Sweeden", "Kings"],
+//     isAvailable: true
+// }
+
+// console.log(castle.name)
+// console.log(castle.isAvailable)
 
 /////////////////// return Keyword ///////////////////
 /////////////////// return Keyword ///////////////////
+/////////////////// return Keyword ///////////////////
+/////////////////// return Keyword ///////////////////
+/////////////////// return Keyword ///////////////////
+/////////////////// return Keyword ///////////////////
+/////////////////// return Keyword ///////////////////
+
