@@ -62,7 +62,7 @@ function renderGame() {
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
     } else if (sum === 21) {
-        message = "Don't EVER gamble again!"
+        message = "You 'won'"
         hasBlackJack = true
     } else {
         message = "You'd already lost when you clicked play!"
@@ -187,7 +187,7 @@ function newCard() {
 
 // console.log (rollDice())
 
-/////////////////// Boolean Operators ///////////////////
+/////////////////// Boolean (logical) Operators ///////////////////
 // let hasCompletedCourse = true
 // let givesCertificate = true
 
@@ -240,12 +240,4 @@ function newCard() {
 
 // console.log(castle.name)
 // console.log(castle.isAvailable)
-
-/////////////////// return Keyword ///////////////////
-/////////////////// return Keyword ///////////////////
-/////////////////// return Keyword ///////////////////
-/////////////////// return Keyword ///////////////////
-/////////////////// return Keyword ///////////////////
-/////////////////// return Keyword ///////////////////
-/////////////////// return Keyword ///////////////////
 
